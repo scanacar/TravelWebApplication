@@ -1,0 +1,26 @@
+﻿@model TravelWebApp.Models.Classes.Blog
+
+@{
+    ViewBag.Title = "NewBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Blog Ekleme</h2>
+<br />
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.Header)
+    @Html.TextBoxFor(x => x.Header, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Date)
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BlogImageURL)
+    @Html.TextBoxFor(x => x.BlogImageURL, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Explanation)
+    @Html.TextAreaFor(x => x.Explanation, new { @class = "form-control"})
+    <br />
+    <button class="btn btn-primary">Ekle</button>
+</form>
+

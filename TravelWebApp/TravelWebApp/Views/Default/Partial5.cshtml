@@ -1,0 +1,15 @@
+﻿@using TravelWebApp.Models.Classes
+@model List<Blog>
+
+<div class="box1-left">
+    @foreach (var x in Model)
+    {
+        <div class="bot-img">
+            <img src="@x.BlogImageURL" alt="" style="width:125px; height:75px"/>
+        </div>
+        <div class="bot-desc1">
+            <p>@x.Explanation.Substring(0,75)...</p>
+        </div>
+        <div class="clear"></div>
+    }
+</div>

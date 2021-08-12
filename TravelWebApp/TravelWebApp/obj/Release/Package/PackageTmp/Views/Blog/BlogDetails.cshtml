@@ -1,0 +1,75 @@
+﻿@model TravelWebApp.Models.Classes.BlogComment
+@{
+    ViewBag.Title = "BlogDetails";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
+    <link href="~/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/web2/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+    <div class="single">
+        <div class="container">
+            <div class="col-md-8 single-main">
+                <div class="single-grid">
+                    @foreach (var x in Model.Value1)
+                    {
+                        <img src="@x.BlogImageURL" alt="" style="margin-bottom:20px" />
+                        <h3>@x.Header</h3>
+                        <p>@x.Date</p>
+                        <p>@x.Explanation</p>
+                    }
+                </div>
+                @foreach (var y in Model.Value2)
+                {
+                    <ul class="comment-list">
+                        <li>
+                            <img src="~/web2/images/avatar.png" class="img-responsive" alt=""><br /><p>@y.Username</p>
+                            <br />
+                            <div class="desc">
+                                <p>@y.Comments</p>
+                            </div>
+                        </li>
+                    </ul>
+                }
+                @Html.Action("AddComment", "Blog")
+            </div>
+
+            <div class="col-md-4 side-content">
+                <div class="recent">
+                    <h3>SON BLOGLAR</h3>
+                    <ul>
+                        @foreach (var z in Model.Value3)
+                        {
+                            <li><a href="/Blog/BlogDetails/@z.ID">@z.Header</a></li>
+                        }
+                    </ul>
+                </div>
+                <div class="comments">
+                    <h3>SON YORUMLAR</h3>
+                    <ul>
+                        <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
+                        <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
+                        <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
